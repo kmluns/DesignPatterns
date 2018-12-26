@@ -11,19 +11,25 @@ public class Engine implements Runnable {
     private int id;
 
     private LinkedList<String> partList;
-    public static Semaphore semaphore;
 
-    public Engine(String engineName,int id) {
+
+    // Used semaphore
+    private static Semaphore semaphore;
+
+    public Engine(String engineName, int id) {
         this.engineName = engineName;
         this.id = id;
         this.partList = null;
         if (this.semaphore == null) {
-            semaphore = new Semaphore(1);
+            // permits -> How many engine work at the same time
+            semaphore = new Semaphore(5);
         }
     }
 
+
     @Override
     public void run() {
+        // Print engine run method
         System.out.println("Running " + engineName);
         try {
             while (partList != null) {
@@ -35,16 +41,20 @@ public class Engine implements Runnable {
                     semaphore.release();
                     break;
                 }
+
+                // Print which engine works on which part
                 System.out.println("Thread: " + engineName + ", " + tempPart + " is working now!");
 
                 // Let the thread sleep for a while for work!
-               thread.sleep(id * 500);
+                thread.sleep((id%5) * 500);
 
+                // Print engine finished
                 System.out.println("Thread: " + engineName + ", " + tempPart + " is finished now!");
 
 
                 semaphore.release();
 
+                // The work is not good, so part have to make again
                 if (Math.random() > 0.8) {
                     partList.add(tempPart);
                     System.out.println("Thread: " + engineName + ", " + tempPart + " is bad quality");
@@ -60,10 +70,12 @@ public class Engine implements Runnable {
 
     public void start(LinkedList<String> partList) {
         this.partList = partList;
-        System.out.println("Starting " + engineName);
         if (thread == null) {
+            // Print engine will be start
+            System.out.println("Starting " + engineName);
             thread = new Thread(this, engineName);
             thread.start();
+
         }
     }
 
