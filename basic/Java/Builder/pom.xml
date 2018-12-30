@@ -5,9 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.uns.designpattern.basic</groupId>
-    <artifactId>javamvc</artifactId>
+    <artifactId>builder</artifactId>
     <version>1.0</version>
-
 
     <build>
         <plugins>
