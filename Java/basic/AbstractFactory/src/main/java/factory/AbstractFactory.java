@@ -1,7 +1,7 @@
 package factory;
 
-import car.Car;
-import wheel.Wheel;
+import domain.car.Car;
+import domain.wheel.Wheel;
 
 /**
  * created by kmluns

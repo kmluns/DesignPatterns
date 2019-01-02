@@ -1,11 +1,11 @@
 package app;
 
-import car.Car;
+import domain.car.Car;
+import domain.wheel.Wheel;
 import factory.AbstractFactory;
 import factory.CarFactory;
 import factory.FactoryProvider;
 import factory.WheelFactory;
-import wheel.Wheel;
 
 /**
  * created by kmluns

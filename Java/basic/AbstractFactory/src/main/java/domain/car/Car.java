@@ -1,6 +1,6 @@
-package car;
+package domain.car;
 
-import wheel.Wheel;
+import domain.wheel.Wheel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +60,7 @@ public abstract class Car {
                 "model='" + model + '\'' +
                 ", producedYear=" + producedYear +
                 ", type='" + type + '\'' +
-                ", wheel=" + wheel +
+                ", domain.wheel=" + wheel +
                 '}';
     }
 }

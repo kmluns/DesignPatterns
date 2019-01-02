@@ -1,4 +1,4 @@
-package wheel;
+package domain.wheel;
 
 /**
  * created by kmluns

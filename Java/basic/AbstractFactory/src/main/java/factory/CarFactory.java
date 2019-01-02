@@ -1,9 +1,9 @@
 package factory;
 
-import car.AudiA3;
-import car.BMW520;
-import car.Car;
-import wheel.Wheel;
+import domain.car.AudiA3;
+import domain.car.BMW520;
+import domain.car.Car;
+import domain.wheel.Wheel;
 
 /**
  * created by kmluns

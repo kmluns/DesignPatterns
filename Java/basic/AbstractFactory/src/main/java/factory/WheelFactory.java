@@ -1,9 +1,9 @@
 package factory;
 
-import car.Car;
-import wheel.OEMWheel;
-import wheel.SteelWheel;
-import wheel.Wheel;
+import domain.car.Car;
+import domain.wheel.OEMWheel;
+import domain.wheel.SteelWheel;
+import domain.wheel.Wheel;
 
 /**
  * created by kmluns
