@@ -8,8 +8,11 @@ import domain.wheel.Wheel;
  */
 public class CarFactory extends AbstractFactory {
     @Override
-    public <T extends Car> T getCarFactory(Class aClass) throws IllegalAccessException, InstantiationException {
-        return (T) aClass.newInstance();
+    public <T extends Car> T getCarFactory(Class aClass) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+        Object newObject = aClass.newInstance();
+        if(newObject instanceof Car)
+            return (T)newObject;
+        throw new ClassNotFoundException();
     }
 
     @Override

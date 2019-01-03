@@ -13,7 +13,10 @@ public class WheelFactory extends AbstractFactory {
     }
 
     @Override
-    public <T extends Wheel> T getWheelFactory(Class aClass) throws IllegalAccessException, InstantiationException {
-        return (T) aClass.newInstance();
+    public <T extends Wheel> T getWheelFactory(Class aClass) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+        Object newObject = aClass.newInstance();
+        if(newObject instanceof Wheel)
+            return (T)newObject;
+        throw new ClassNotFoundException();
     }
 }

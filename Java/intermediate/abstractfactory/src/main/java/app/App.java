@@ -31,7 +31,6 @@ public class App {
             System.out.println(steelWheel);
             System.out.println(oemWheel);
 
-
             for (int i = 0; i < 4; i++) {
                 bmw.getWheel().add(oemWheel);
                 audi.getWheel().add(steelWheel);

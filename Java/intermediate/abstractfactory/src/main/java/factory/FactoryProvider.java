@@ -5,7 +5,10 @@ package factory;
  */
 public class FactoryProvider {
 
-    public static <T extends AbstractFactory> T getFactory(Class aClass) throws IllegalAccessException, InstantiationException {
-        return (T) aClass.newInstance();
+    public static <T extends AbstractFactory> T getFactory(Class aClass) throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+        Object newObject = aClass.newInstance();
+        if(newObject instanceof AbstractFactory)
+            return (T)newObject;
+        throw new ClassNotFoundException();
     }
 }

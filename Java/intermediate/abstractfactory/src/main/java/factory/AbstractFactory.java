@@ -8,8 +8,8 @@ import domain.wheel.Wheel;
  */
 public abstract class AbstractFactory {
 
-    public abstract <T extends Car> T getCarFactory(Class aClass) throws IllegalAccessException, InstantiationException;
+    public abstract <T extends Car> T getCarFactory(Class aClass) throws IllegalAccessException, InstantiationException, ClassNotFoundException;
 
-    public abstract <T extends Wheel> T getWheelFactory(Class aClass) throws IllegalAccessException, InstantiationException;
+    public abstract <T extends Wheel> T getWheelFactory(Class aClass) throws IllegalAccessException, InstantiationException, ClassNotFoundException;
 
 }
